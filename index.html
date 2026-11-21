@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Robot</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #080d16;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    color: #00e5ff;
+    letter-spacing: 3px;
+}
+
+.status {
+    text-align: center;
+    color: #35e89b;
+    margin: 15px;
+}
+
+#connectionStatus {
+    color: #ff4765;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.camera {
+    background: #111c2b;
+    border: 2px solid #00cfe8;
+    border-radius: 16px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #8da4b9;
+    margin: 20px 0;
+}
+
+.camera span {
+    font-size: 55px;
+}
+
+h3 {
+    color: #00e5ff;
+    text-align: center;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(3, 75px);
+    gap: 12px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+button {
+    background: #14263a;
+    border: 1px solid #00d9ff;
+    color: white;
+    border-radius: 14px;
+    padding: 18px;
+    font-size: 23px;
+}
+
+.stop {
+    background: #681b2a;
+    border-color: #ff4765;
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    color: #61758b;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .camera {
+        height: 220px;
+    }
+
+    .controls {
+        grid-template-columns: repeat(3, 65px);
+        gap: 10px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 20px;
+    }
+}
+
+.robot-info {
+    background: #111c2b;
+    border: 1px solid #00e5ff;
+    border-radius: 15px;
+    padding: 18px;
+    margin: 25px auto;
+    max-width: 400px;
+    box-shadow: 0 0 15px #00e5ff33;
+}
+
+.robot-info h3 {
+    color: #00e5ff;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.robot-info p {
+    color: white;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+    <h1>MY ROBOT</h1>
+    <p>ROBOT CONTROL SYSTEM</p>
+</header>
+
+<div class="status" id="connectionStatus">● DISCONNECTED — ROBOT</div>
+
+<div class="camera">
+    <span>📷</span>
+    <h3>LIVE CAMERA</h3>
+    <p>Camera not connected yet</p>
+</div>
+
+<h3>MOVEMENT CONTROL</h3>
+
+<div class="controls">
+    <div></div>
+    <button onclick="move('forward')">▲</button>
+    <div></div>
+
+    <button onclick="move('left')">◀</button>
+    <button class="stop" onclick="move('stop')">STOP</button>
+    <button onclick="move('right')">▶</button>
+
+    <div></div>
+    <button onclick="move('backward')">▼</button>
+    <div></div>
+</div>
+ 
+<div class="robot-info">
+    <h3>ROBOT STATUS</h3>
+
+    <p>Wi-Fi: <span style="color:#ff4765;">DISCONNECTED</span></p>
+
+    <p>Camera: <span style="color:#ff4765;">NOT CONNECTED</span></p>
+
+    <p>Motors: <span style="color:#ff4765;">NOT CONNECTED</span></p>
+</div>
+
+<footer>MY ROBOT • VERSION 2.0</footer>
+
+<script>
+function move(direction) {
+    alert("Command: " + direction);
+}
+</script>
+
+</body>
+</html>
